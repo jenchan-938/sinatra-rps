@@ -1,6 +1,11 @@
 require "sinatra"
 require "sinatra/reloader"
 
+@options = ["Rock", "Paper", "Scissors"]
+@robot = @options.sample
+@robot_play = "They played #{@robot}"
+
+
 get("/") do
   "
   <h1>Welcome to Rock-Paper-Scissors</h1>
@@ -9,13 +14,13 @@ get("/") do
 end
 
 
-@options = ["Rock", "Paper", "Scissors"]
-@robot = @options.sample
-@robot_play = "They played #{@robot}"
 
-get ("/playrock") do
+get ("/rock") do
 
+  erb(:rock)
+  
 @user_play = "We played rock"
+
 if @robot == "Rock"
   @result = "We tied"
 elsif @robot =="Paper"
@@ -26,7 +31,8 @@ end
 
 end
 
-get ("/playscissors") do
+pp @result
+get ("/scissors") do
 
   @user_play = "We played scissors"
 
@@ -40,7 +46,7 @@ get ("/playscissors") do
   
   end
 
-  get ("/playpaper") do
+  get ("/paper") do
 
     @user_play = "We played paper"
     if @robot == "Paper"
