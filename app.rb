@@ -1,9 +1,6 @@
 require "sinatra"
 require "sinatra/reloader"
 
-@options = ["Rock", "Paper", "Scissors"]
-@robot = @options.sample
-@robot_play = "They played #{@robot}"
 
 
 get("/") do
@@ -16,8 +13,9 @@ end
 
 
 get ("/rock") do
-
-  erb(:rock)
+@options = ["Rock", "Paper", "Scissors"]
+@robot = @options.sample
+@robot_play = "They played #{@robot}"
   
 @user_play = "We played rock"
 
@@ -28,6 +26,7 @@ elsif @robot =="Paper"
 elsif @robot =="Scissors"
     @result = "We won!"
 end
+erb(:rock)
 
 end
 
