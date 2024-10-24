@@ -4,9 +4,24 @@
     <title>Sinatra RPS</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <style>
+      .navbar{
+        display: flex;
+        justify-content: left;
+      }
+
+    </style>
   </head>
 
   <body>
+  
+  <div class ="navbar">
+  <div><a href ="/"> "Rules" </a></div> 
+  <div><a href = "/playrock"> "Play Rock" <a/></div>
+  <div><a href ="/playscissors"> "Play Scissors" <a/> </div>
+  <div><a href ="/playpaper"> "Play Paper" <a/> </div>
+  </div>
 
     <%= yield %>
 
