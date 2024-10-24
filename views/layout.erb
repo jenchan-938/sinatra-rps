@@ -5,26 +5,26 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
-    <style>
-      .navbar{
-        display: flex;
-        justify-content: left;
-      }
-
-    </style>
+   
   </head>
 
   <body>
   
+   <style>
+      .navbar{
+        display: flex;
+        justify-content: left;
+        flex-direction: column;
+      }
+
+    </style>
+
   <div class ="navbar">
-  <div><a href ="/"> Rules </a></div> 
   <div><a href = "/rock"> Play Rock </a></div>
   <div><a href ="/scissors"> Play Scissors </a> </div>
   <div><a href ="/paper"> Play Paper </a> </div>
   </div>
 
-  <img src ="/images/3d.png"> <ref= "diagram">
-    <%= yield %>
-  
+   <%= yield %>
   </body>
 </html>

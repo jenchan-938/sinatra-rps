@@ -4,56 +4,65 @@ require "sinatra/reloader"
 
 
 get("/") do
-  "
-  <h1>Welcome to Rock-Paper-Scissors</h1>
-  <p>Define some routes in app.rb</p>
-  "
+  
+ 
+
+
+  erb(:homepage)
+
 end
 
 
 
 get ("/rock") do
-@options = ["Rock", "Paper", "Scissors"]
+@options = ["rock", "paper", "scissors"]
 @robot = @options.sample
 @robot_play = "They played #{@robot}"
   
 @user_play = "We played rock"
 
-if @robot == "Rock"
-  @result = "We tied"
-elsif @robot =="Paper"
+if @robot == "rock"
+  @result = "We tied!"
+elsif @robot =="paper"
   @result = "We lost!"
-elsif @robot =="Scissors"
+elsif @robot =="scissors"
     @result = "We won!"
 end
 erb(:rock)
 
 end
 
-pp @result
-get ("/scissors") do
 
+get ("/scissors") do
+  @options = ["rock", "paper", "scissors"]
+  @robot = @options.sample
+  @robot_play = "They played #{@robot}"
   @user_play = "We played scissors"
 
-  if @robot == "Scissors"
-    @result = "We tied"
-  elsif @robot =="Paper"
+  if @robot == "scissors"
+    @result = "We tied!"
+  elsif @robot =="paper"
     @result = "We won!"
-  elsif @robot =="Rock"
+  elsif @robot =="rock"
       @result = "We lost!"
   end
   
+  erb(:scissors)
   end
 
   get ("/paper") do
+    @options = ["rock", "paper", "scissors"]
+    @robot = @options.sample
+    @robot_play = "They played #{@robot}"
 
     @user_play = "We played paper"
-    if @robot == "Paper"
-      @result = "We tied"
-    elsif @robot =="Rock"
+    if @robot == "paper"
+      @result = "We tied!"
+    elsif @robot =="rock"
       @result = "We won!"
-    elsif @robot =="Scissors"
+    elsif @robot =="scissors"
         @result = "We lost!"
     end
     
+    erb(:paper)
     end
